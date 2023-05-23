@@ -3,12 +3,15 @@ import Image from "next/image";
 import { GoPlus } from "react-icons/go";
 import { FcViewDetails } from "react-icons/fc";
 import { BsStarFill } from "react-icons/bs";
+import Link from "next/link";
+import { store } from "@/store/index";
 
-const products = ({ products }) => {
-  //console.log(products);
+const products = ({}) => {
+  const data = store.getState().product.products;
+
   return (
     <div className="py-6 px-4 grid grid-cols-4 gap-4">
-      {products.map((item) => (
+      {data.map((item) => (
         <div key={item._id} className="border-[1px] borber-gray-200 mb-6 group">
           <div className="w-full h-[350px] overflow-hidden p-1">
             <Image
@@ -30,15 +33,17 @@ const products = ({ products }) => {
                 </span>
                 Add
               </button>
-              <button
-                className="w-20 h-9 bg-blue text-white rounded-full flex gap-1 items-center justify-center hover:bg-[#004f9a] 
-              duration-300"
-              >
-                <span>
-                  <FcViewDetails />
-                </span>
-                Details
-              </button>
+              <Link href={`/product/${item._id}`}>
+                <button
+                  className="w-20 h-9 bg-blue text-white rounded-full flex gap-1 items-center justify-center 
+                  hover:bg-[#004f9a] duration-300"
+                >
+                  <span>
+                    <FcViewDetails />
+                  </span>
+                  Details
+                </button>
+              </Link>
             </div>
             <div className="flex item-center gap-3">
               <p className="font-titleFont text-lg text-green-700 font-semibold">

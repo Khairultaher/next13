@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { logo } from "@/public/assets/images";
+import { logo, logo1 } from "@/public/assets/images";
 import { IoSearchOutline } from "react-icons/io5";
 import {
   AiOutlineHeart,

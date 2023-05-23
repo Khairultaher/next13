@@ -1,6 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
 
-const productList = [
+const products = [
   {
     _id: 101,
     title: "Canon EOS Rebel T100",
@@ -247,12 +246,7 @@ const productList = [
 ];
 
 export async function GET(req) {
-  const { searchParams } = new URL(req.url);
-  //console.log(searchParams);
-  //const title = searchParams.get("name");
-  // const products = productList.filter((p) =>
-  //   p.title.toLowerCase().includes(title?.toLowerCase() ?? "")
-  // );
-
-  return NextResponse.json(productList.slice(0, 100));
+  const id = req.url.slice(req.url.lastIndexOf("/") + 1);
+  const product = products.find((item) => item._id == id);
+  return new Response(JSON.stringify(product));
 }

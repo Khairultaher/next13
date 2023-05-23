@@ -1,6 +1,9 @@
 import { Banner } from "@/components/Banner";
 import Products from "@/components/Products";
 
+import { store } from "@/store/index";
+import { setProducts } from "@/store/productSlice";
+
 // export const metadata = {
 //   title: "Home"
 // };
@@ -25,11 +28,13 @@ export default async function Home({ props }) {
   //const res = await fetch("http://localhost:3000/api/product");
 
   const data = await res.json();
+  //console.log(data);
+  store.dispatch(setProducts(data));
 
   return (
     <div className="max-w-contentContainer mx-auto bg-white">
       <Banner />
-      <Products products={data} />
+      <Products />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import logo from "./logo.png";
+import logo1 from "./logo1.png";
 import phoneImg from "./phoneImg.webp";
 import sliderImgOne from "./slider/sliderImgOne.webp";
 import sliderImgTwo from "./slider/sliderImgTwo.webp";

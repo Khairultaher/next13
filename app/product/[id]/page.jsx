@@ -1,7 +1,12 @@
-import React from "react";
+import { store } from "@/store/index";
+import { setProduct } from "@/store/productSlice";
 
-function page({ params }) {
-  return <div id="1">procuct: {JSON.stringify(params.id)}</div>;
+export default async function page({ params }) {
+  const data = store
+    .getState()
+    .product.products.find((item) => item._id == params.id);
+
+  store.dispatch(setProduct(data));
+
+  return <div>{JSON.stringify(store.getState().product.product)}</div>;
 }
-
-export default page;

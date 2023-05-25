@@ -248,11 +248,10 @@ const productList = [
 
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
-  //console.log(searchParams);
-  //const title = searchParams.get("name");
-  // const products = productList.filter((p) =>
-  //   p.title.toLowerCase().includes(title?.toLowerCase() ?? "")
-  // );
+  const name = searchParams.get("name");
+  const data = productList.filter((p) =>
+    p.title.toLowerCase().includes(name?.toLowerCase() ?? "")
+  );
 
-  return NextResponse.json(productList.slice(0, 100));
+  return NextResponse.json(data.slice(0, 100));
 }

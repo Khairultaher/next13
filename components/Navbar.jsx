@@ -22,15 +22,17 @@ export const Navbar = () => {
                 <Image src={logo} alt="logo" className="w-44"></Image>
               </div>
             </Link>
-            <div className="navBarHover">
-              <div className="w-4 grid grid-cols-2 gap-[2px]">
-                <span className="w-1.5 h-1.5 border-[1px] border-white inline-flex"></span>
-                <span className="w-1.5 h-1.5 border-[1px] border-white inline-flex"></span>
-                <span className="w-1.5 h-1.5 border-[1px] border-white inline-flex"></span>
-                <span className="w-1.5 h-1.5 border-[1px] border-white inline-flex"></span>
+            <Link href="/test">
+              <div className="navBarHover">
+                <div className="w-4 grid grid-cols-2 gap-[2px]">
+                  <span className="w-1.5 h-1.5 border-[1px] border-white inline-flex"></span>
+                  <span className="w-1.5 h-1.5 border-[1px] border-white inline-flex"></span>
+                  <span className="w-1.5 h-1.5 border-[1px] border-white inline-flex"></span>
+                  <span className="w-1.5 h-1.5 border-[1px] border-white inline-flex"></span>
+                </div>
+                <p>Department</p>
               </div>
-              <p>Department</p>
-            </div>
+            </Link>
             <div className="navBarHover">
               <div className="w-4 grid grid-cols-2 gap-[2px]">
                 <span className="w-1.5 h-1.5 rounded-md border-[1px] border-white inline-flex"></span>

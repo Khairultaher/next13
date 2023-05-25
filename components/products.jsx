@@ -4,14 +4,14 @@ import { GoPlus } from "react-icons/go";
 import { FcViewDetails } from "react-icons/fc";
 import { BsStarFill } from "react-icons/bs";
 import Link from "next/link";
-import { store } from "@/store/index";
+import { store } from "@/store";
 
-const products = ({}) => {
+const products = ({products}) => {
   const data = store.getState().product.products;
 
   return (
     <div className="py-6 px-4 grid grid-cols-4 gap-4">
-      {data.map((item) => (
+      {products.map((item) => (
         <div key={item._id} className="border-[1px] borber-gray-200 mb-6 group">
           <div className="w-full h-[350px] overflow-hidden p-1">
             <Image

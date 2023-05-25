@@ -3,11 +3,12 @@ import { PayloadAction } from "@reduxjs/toolkit";
 import { FiChevronDown } from "react-icons/fi";
 
 const initialState = {
+  search: "",
   product: {},
   products: []
 };
 const productSlice = createSlice({
-  name: "product",
+  name: "productL",
   initialState,
   reducers: {
     setProduct: (state, action) => {
@@ -17,9 +18,12 @@ const productSlice = createSlice({
     },
     setProducts: (state, action) => {
       state.products = action.payload;
+    },
+    setSearch: (state, action) => {
+      state.search = action.payload;
     }
   }
 });
 
-export const { setProduct, setProducts } = productSlice.actions;
+export const { setProduct, setProducts, setSearch } = productSlice.actions;
 export default productSlice.reducer;

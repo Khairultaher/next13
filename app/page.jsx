@@ -34,7 +34,7 @@ export default async function Home({ props }) {
   return (
     <div className="max-w-contentContainer mx-auto bg-white">
       <Banner />
-      <Products />
+      <Products products={data} />
     </div>
   );
 }
